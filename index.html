@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <link rel="stylesheet" href="css/index-normal.css">
+        <script src="js/custom/index.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/jquery/v3.6.0/jquery.std.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/vue/v3.2.8/vue.global.prod.js" type="text/javascript" charset="utf-8"></script>
+        <title>Lemon Home</title>
+    </head>
+    <body onload="init()">
+        <div id="mask">
+            <div id="time-container"></div>
+            <div id="search-area-container">
+                <div id="input-container">
+                    <div id="search-engine-icon">
+                        <span class="se-icon-container">
+                            <a class="engine-provider" href="javascript:void(0)">
+                                <img class="se-icon" src="img/icon/baidu.png" alt="Baidu" />
+                            </a>&nbsp;&nbsp;
+                        </span>
+                        <span class="se-icon-container">
+                            <a class="engine-provider" href="javascript:void(0)">
+                                <img class="se-icon" src="img/icon/google.png" alt="Google" />
+                            </a>&nbsp;&nbsp;
+                        </span>
+                        <span class="se-icon-container">
+                            <a class="engine-provider" href="javascript:void(0)">
+                                <img class="se-icon" src="img/icon/bing.png" alt="Bing" />
+                            </a>
+                        </span>
+                    </div>
+                    <form id="search-form" action="https://www.baidu.com/s" method="get">
+                        <input class="input-placeholder-set" id="search-input" type="text" name="wd" placeholder="搜索"
+                            autocomplete="off" accesskey="S" onfocus="searchBoxFocusAction()"
+                            onblur="searchBoxBlurAction()" />
+                        <button id="go" rel="nofollow" type="submit"></button>
+                    </form>
+                </div>
+            </div>
+            <div id="se-providers-container"></div>
+            <div id="footer-container"></div>
+        </div>
+    </body>
+</html>
