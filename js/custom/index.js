@@ -35,7 +35,7 @@ function activeInterval() {
 function showFooter() {
     var year = new Date().getFullYear();
     $('#footer-container').html('<p id="copyrights">&copy;' + year +
-        ', Carlos | <a href="doc/about.md" target="_blank" class="xlink">关于</a></p>');
+        ', Carlos | <a href="about.html" target="_blank" class="xlink">关于</a></p>');
 }
 
 function getScreenResolution() {
