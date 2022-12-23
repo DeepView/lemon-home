@@ -69,7 +69,7 @@ function getBackgroundSizeType() {
 
 function setBackgroundImage() {
     var sizeType = getBackgroundSizeType();
-    var imgCssVal = 'url("img/background/' + sizeType + '/index01.webp")';
+    var imgCssVal = 'url("img/background/' + sizeType + '/index00.webp")';
     $('body').css('background-image', imgCssVal);
 }
 
