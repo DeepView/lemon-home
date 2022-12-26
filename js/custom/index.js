@@ -81,32 +81,52 @@ function showTimeNow() {
 }
 
 function searchBoxFocusAction() {
-    $('#mask').css('backdrop-filter', 'saturate(100%) blur(20px)');
+    var screenWidth = getScreenResolution().width;
+    $('#mask').css('backdrop-filter', 'var(--body-backdrop-filter)');
     // $('#search-engine-icon').css('display', 'table');
-    $('#search-input').css('width', '600px');
-    $('#search-input').css('background-color', 'rgba(255, 255, 255, 0.75)');
+    if (screenWidth >= 1600 && screenWidth < 2400) $('#search-input').css('width', '600px');
+    else if (screenWidth >= 2400 && screenWidth < 3200) $('#search-input').css('width', '800px');
+    else if (screenWidth >= 3200) $('#search-input').css('width', '1200px');
+    else $('#search-input').css('width', '600px');
+    $('#search-input').css('background-color', 'var(--search-bgcolor-focus)');
     $('#search-input').hover(function() {
-        $(this).css('width', '600px');
-        $(this).css('background-color', 'rgba(255, 255, 255, 0.75)');
+        if (screenWidth >= 1600 && screenWidth < 2400) $(this).css('width', '600px');
+        else if (screenWidth >= 2400 && screenWidth < 3200) $(this).css('width', '800px');
+        else if (screenWidth >= 3200) $(this).css('width', '1200px');
+        else $(this).css('width', '600px');
+        $(this).css('background-color', 'var(--search-bgcolor-focus)');
     }, function() {
-        $(this).css('width', '600px');
-        $(this).css('background-color', 'rgba(255, 255, 255, 0.75)');
+        if (screenWidth >= 1600 && screenWidth < 2400) $(this).css('width', '600px');
+        else if (screenWidth >= 2400 && screenWidth < 3200) $(this).css('width', '800px');
+        else if (screenWidth >= 3200) $(this).css('width', '1200px');
+        else $(this).css('width', '600px');
+        $(this).css('background-color', 'var(--search-bgcolor-focus)');
     });
 }
 
 function searchBoxBlurAction() {
+    var screenWidth = getScreenResolution().width;
     $('#mask').css('backdrop-filter', '');
     // $('#search-engine-icon').css('display', 'none');
-    $('#search-input').css('width', '200px');
+    if (screenWidth >= 1600 && screenWidth < 2400) $('#search-input').css('width', '200px');
+    else if (screenWidth >= 2400 && screenWidth < 3200) $('#search-input').css('width', '300px');
+    else if (screenWidth >= 3200) $('#search-input').css('width', '450px');
+    else $('#search-input').css('width', '200px');
     $('#search-input').css('box-shadow', '0 0 10px 5px rgba(0, 0, 0, 0.25)');
-    $('#search-input').css('backdrop-filter', 'saturate(100%) blur(20px)');
-    $('#search-input').css('background-color', 'rgba(192, 192, 192, 0.2)');
+    $('#search-input').css('backdrop-filter', 'var(--search-backdrop-filter)');
+    $('#search-input').css('background-color', 'var(--search-bgcolor-normal)');
     $('#search-input').hover(function() {
-        $(this).css('width', '600px');
-        $(this).css('background-color', 'rgba(255, 255, 255, 0.75)');
+        if (screenWidth >= 1600 && screenWidth < 2400) $(this).css('width', '600px');
+        else if (screenWidth >= 2400 && screenWidth < 3200) $(this).css('width', '800px');
+        else if (screenWidth >= 3200) $(this).css('width', '1200px');
+        else $(this).css('width', '600px');
+        $(this).css('background-color', 'var(--search-bgcolor-hover)');
     }, function() {
-        $(this).css('width', '200px');
-        $(this).css('background-color', 'rgba(192, 192, 192, 0.2)');
+        if (screenWidth >= 1600 && screenWidth < 2400) $(this).css('width', '200px');
+        else if (screenWidth >= 2400 && screenWidth < 3200) $(this).css('width', '300px');
+        else if (screenWidth >= 3200) $(this).css('width', '450px');
+        else $(this).css('width', '200px');
+        $(this).css('background-color', 'var(--search-bgcolor-normal)');
     });
 }
 

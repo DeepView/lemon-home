@@ -1,0 +1,29 @@
+:root {
+    --body-top: 0px;
+    --body-left: 0px;
+}
+
+#time-container {
+    font-size: 85px;
+    top: calc(var(--body-top) + 150px);
+}
+
+#search-area-container {
+    top: calc(var(--body-top) + 450px);
+}
+
+#search-input {
+    width: 450px;
+    height: 90px;
+    border-radius: 45px;
+    font-size: 30px;
+}
+
+#search-input:hover {
+    width: 1200px;
+}
+
+#footer-container {
+    font-size: 25px;
+    width: 280px;
+}
