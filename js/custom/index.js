@@ -5,6 +5,43 @@ class ScriptError {
     }
 }
 
+class SettingItem {
+    constructor(attribute, value) {
+        this.attribute = attribute;
+        this.value = value;
+    }
+
+    setAttribute(attribute) {
+        var conditionIsNull = attribute == null;
+        var conditionIsEmpty = attribute.length == 0;
+        var conditionIsSpaceString = attribute.replace(/(^s*)|(s*$)/g, "").length == 0;
+        if (conditionIsNull || conditionIsEmpty || conditionIsSpaceString)
+            throw new ScriptError(-1, 'Invalid value, the attribute is not null or empty.');
+        else this.attribute = attribute;
+    }
+
+    setValue(value) {
+        if (value == null) throw new ScriptError(-1, 'Invalid value, the value is not null.');
+        else this.value = value;
+    }
+
+    getAttribute() {
+        return this.attribute;
+    }
+
+    getValue() {
+        return this.value;
+    }
+
+    clearValue() {
+        setValue('');
+    }
+
+    toString() {
+        return getAttribute() + ' : ' + getValue();
+    }
+}
+
 var ScreenResolution = {
     width: 0,
     height: 0,

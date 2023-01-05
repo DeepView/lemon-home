@@ -90,7 +90,8 @@ body {
     color: transparent;
 }
 
-#go {
+#go,
+#translation {
     display: none;
 }
 

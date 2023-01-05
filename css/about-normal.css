@@ -1,11 +1,27 @@
+:root {
+    --body-top: 0px;
+    --search-backdrop-filter: saturate(100%) blur(20px);
+}
+
 body {
     background-color: rgb(64, 64, 64);
+    background-image: url('../img/background/1080p/index00.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     color: rgb(255, 255, 255);
+
 }
 
 #content {
     width: 75%;
     position: fixed;
     left: 50%;
+    padding: 32px;
+    border-radius: 16px;
     transform: translateX(-50%);
+    top: calc(var(--body-top) + 96px);
+    background-color: rgba(192, 192, 192, 0.2);
+    backdrop-filter: var(--search-backdrop-filter);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.25);
 }
