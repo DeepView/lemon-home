@@ -8,6 +8,8 @@
             media="screen and (min-width: 2400px)" />
         <link rel="stylesheet" type="text/css" href="css/index-vlarge-screen.css"
             media="screen and (min-width: 3200px)" />
+        <link rel="stylesheet" type="text/css" href="css/index-phone-screen.css"
+            media="screen and (max-width: 500px)" />
         <link rel="Bookmark" type="image/x-icon" href="img/icon/lemon.ico" />
         <link rel="icon" type="image/x-icon" href="img/icon/lemon.ico" />
         <link rel="shortcut icon" type="image/x-icon" href="img/icon/lemon.ico" />
@@ -15,8 +17,6 @@
         <script src="js/vue/v3.2.8/vue.global.prod.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/custom/class-list.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/custom/index.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/custom/md5.js" type="text/javascript" charset="utf-8"></script>
-        <script src="js/custom/translation.js" type="text/javascript" charset="utf-8"></script>
         <title>Lemon Home</title>
     </head>
     <body onload="init()">
@@ -41,11 +41,11 @@
                             </a>
                         </span>
                     </div>
-                    <form id="search-form" action="https://www.baidu.com/s" method="get">
+                    <form id="search-form" action="https://www.baidu.com/s" method="get" onsubmit="trans()">
                         <input class="input-placeholder-set" id="search-input" type="text" name="wd" placeholder="搜索"
                             autocomplete="off" accesskey="S" onfocus="searchBoxFocusAction()"
-                            onblur="searchBoxBlurAction()" />
-                        <button id="go" rel="nofollow" type="submit"></button>
+                            onblur="searchBoxBlurAction()" oninput="changeRequestAction()" />
+                        <input id="go" rel="nofollow" type="submit" />
                     </form>
                 </div>
             </div>

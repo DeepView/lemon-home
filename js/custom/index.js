@@ -72,7 +72,9 @@ function activeInterval() {
 function showFooter() {
     var year = new Date().getFullYear();
     $('#footer-container').html('<p id="copyrights">&copy;' + year +
-        ', Carlos | <a href="about.html" target="_blank" class="xlink">关于</a></p>');
+        ', <a href="https://www.carlos-saber.cn/" class="xlink">Carlos</a> ' +
+        '| <a href="about.html" target="_blank" class="xlink">关于</a></p>'
+    );
 }
 
 function getScreenResolution() {
@@ -173,4 +175,29 @@ function openEngineProviderList() {
     }, function() {
         $('#se-providers-container').css('display', 'none');
     });
+}
+
+function changeRequestAction() {
+    var content = $('#search-input').val();
+    if (content.length > 7) {
+        if (content.substring(0, 6) == '@trans') {
+            $('#search-form').attr('action', 'https://fanyi.baidu.com/');
+            $('#search-input').attr('name', 'aldtype');
+        } else {
+            $('#search-form').attr('action', 'https://www.baidu.com/s');
+            $('#search-input').attr('name', 'wd');
+        }
+    } else {
+        $('#search-form').attr('action', 'https://www.baidu.com/s');
+        $('#search-input').attr('name', 'wd');
+    }
+}
+
+function trans() {
+    if ($('#search-form').attr('action') == 'https://fanyi.baidu.com/') {
+        var query = $('#search-input').val();
+        var headLen = '@trans'.length + 1;
+        query = query.substring(headLen, query.length);
+        $('#search-input').val(decodeURI('16047#auto/auto/') + query);
+    }
 }

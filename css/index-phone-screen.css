@@ -1,0 +1,5 @@
+#search-input:hover {
+    width: 400px;
+    background-color: var(--search-bgcolor-hover);
+    color: rgb(64, 64, 64);
+}
